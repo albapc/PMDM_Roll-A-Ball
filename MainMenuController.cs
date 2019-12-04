@@ -7,6 +7,7 @@ public class MainMenuController : MonoBehaviour {
 
 	public void NewGame()
     {
+        //carga una nueva partida
         SceneManager.LoadScene("Minigame");
     }
 

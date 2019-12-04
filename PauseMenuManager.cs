@@ -20,15 +20,19 @@ public class PauseMenuManager : MonoBehaviour {
         //boton P para pausar y reanudar el juego
         if(Input.GetKeyDown(KeyCode.P))
         {
+            //si el juego esta en ejecucion...
             if(Time.timeScale == 1)
             {
+                //pausa el juego
                 Time.timeScale = 0;
-                ShowPaused();
-            } else if(Time.timeScale == 0)
+                ShowPaused(); //muestra el menu de pausa
+            } else if(Time.timeScale == 0) //si ya esta pausado...
             {
+                //imprime en consola
                 Debug.Log("High");
+                //reanuda el juego
                 Time.timeScale = 1;
-                HidePaused();
+                HidePaused(); //oculta el menu de pausa
             }
         }
 	}
@@ -53,7 +57,7 @@ public class PauseMenuManager : MonoBehaviour {
         }
     }
 
-    //muestra los objetos con la etiqueta ShowOnPause
+    //muestra los objetos con la etiqueta ShowOnPause, es decir, el menu de pausa
     public void ShowPaused()
     {
         foreach(GameObject g in pauseObjects)
@@ -71,7 +75,7 @@ public class PauseMenuManager : MonoBehaviour {
         }
     }
 
-    //carga el nivel indicado, en este caso lo usaremos para volver al menu principal
+    //carga el nivel indicado, en este caso lo usaremos para volver al menu principal (se asigna el nivel en la interfaz de Unity)
     public void LoadLevel(string level)
     {
         SceneManager.LoadScene(level);
