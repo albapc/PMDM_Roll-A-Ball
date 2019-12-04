@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour {
 	private Vector3 offset;
 
 	void Start () {
+		//asigna la posicion de la camara
 		offset = transform.position - player.transform.position;
 		
 	}
